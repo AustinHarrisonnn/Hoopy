@@ -11,3 +11,7 @@ Hoopy is an AI powered sports dashboard showing live scores & stats while levera
 ## Product Spec
 
 ## Wireframes
+
+<img width="1280" height="1080" alt="homepage" src="https://github.com/user-attachments/assets/2fdae6cf-9f29-4796-9af2-ebe2353f1809" />
+
+
