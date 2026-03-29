@@ -6,7 +6,8 @@
 
 ### Description
 
-Hoopy is an AI powered sports dashboard showing live scores & stats while leveraging AI to generate real-time game analysis and predicitions.
+Hoopy is an AI powered sports dashboard showing live scores & stats while leveraging AI to generate real-time game analysis and predicitions. The 
+user is able to create an account and select a favorite NBA team or teams to follow that will be displayed on the users dashboard.
 
 ## Product Spec
 
