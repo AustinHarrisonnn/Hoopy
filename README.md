@@ -1,2 +1,7 @@
 # Hoopy
-An AI powered NBA dashboard with live scores &amp; stats. AI is used to generate real-time game analysis and predictions.
+
+## Overview
+
+### Description
+
+Hoopy is an AI powered sports dashboard showing live scores & stats while leveraging AI to generate real-time game analysis and predicitions
