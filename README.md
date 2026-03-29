@@ -12,13 +12,13 @@ Hoopy is an AI powered sports dashboard showing live scores & stats while levera
 
 ## Wireframes
 Homepage:
-<img width="1280" height="1080" alt="homepage" src="https://github.com/user-attachments/assets/2fdae6cf-9f29-4796-9af2-ebe2353f1809" />
+<img width="880" height="680" alt="homepage" src="https://github.com/user-attachments/assets/2fdae6cf-9f29-4796-9af2-ebe2353f1809" />
 Signup Page:
-<img width="1280" height="1080" alt="signup" src="https://github.com/user-attachments/assets/6a826360-63e5-425f-ad02-2f652cd192de" />
+<img width="880" height="680" alt="signup" src="https://github.com/user-attachments/assets/6a826360-63e5-425f-ad02-2f652cd192de" />
 Team Selection Page:
-<img width="1280" height="1080" alt="selection" src="https://github.com/user-attachments/assets/63fde72a-69d0-4f7e-8007-befc434f78fb" />
+<img width="880" height="680" alt="selection" src="https://github.com/user-attachments/assets/63fde72a-69d0-4f7e-8007-befc434f78fb" />
 Dashboard Page:
-<img width="1280" height="1080" alt="dashboard" src="https://github.com/user-attachments/assets/6d30f43c-a076-43a3-8404-0e150a530e52" />
+<img width="880" height="680" alt="dashboard" src="https://github.com/user-attachments/assets/6d30f43c-a076-43a3-8404-0e150a530e52" />
 
 
 
