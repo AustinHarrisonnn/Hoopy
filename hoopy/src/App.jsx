@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import SignUp from '/pages/SignUp'
+import SignUp from './pages/Signup'
 
 function App() {
   return (
@@ -12,4 +11,5 @@ function App() {
   )
 }
 
+export default App
 
