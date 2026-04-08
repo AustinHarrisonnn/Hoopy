@@ -2,12 +2,17 @@ import { useState } from 'react'
 import { auth, db } from '../lib/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import generic from '../assets/Genbg.png'
+import altlogo from '../assets/logosingle.png'
 
 function SignUp() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = async () => {
         try {
@@ -23,6 +28,7 @@ function SignUp() {
             })
 
             console.log('Account created successfully!')
+            navigate('/teamselector')
 
         } catch (err) {
             setError(err.message)
@@ -30,11 +36,13 @@ function SignUp() {
     }
 
     return (
-        <div className="min-h-screen bg-indigo-900 flex items-center justify-center">
-            <div className="bg-indigo-700/40 p-8 rounded-2xl w-full max-w-md">
-
-                <h1 className="text-white text-3xl font-bold mb-2">Sign up for Hoopy today!</h1>
-                <p className="text-gray-300 mb-8">Join Hoopy now and follow your teams</p>
+        <div className="min-h-screen flex items-center justify-center" style={{ backgroundImage: `url(${generic})`}}>
+            <div className="bg-[#008EFF] p-8 rounded-2xl w-full max-w-md">
+                <div className='flex items-center gap-3 mb-2'>
+                    <img src={altlogo} alt='alternate hoopy logo' className='w-20 h-20 mb-2 object-contain' />
+                    <h1 className="text-white text-3xl font-bold">Sign up for Hoopy today!</h1>
+                </div>
+                <p className="text-gray-200 mb-8">Join Hoopy now and follow your teams</p>
 
                 {error && (
                     <p className="text-red-400 text-sm mb-4 bg-red-950 p-3 rounded-lg">{error}</p>
@@ -67,13 +75,13 @@ function SignUp() {
 
                     <button
                         onClick={handleSubmit}
-                        className="bg-gray-950 hover:bg-indigo-950 text-white font-semibold py-3 rounded-lg transition-colors mt-2"
+                        className="bg-gray-950 hover:bg-sky-950 text-white font-semibold py-3 rounded-lg transition-colors mt-2"
                     >
                         Sign Up
                     </button>
                 </div>
 
-                <p className="text-gray-300 text-sm text-center mt-6">
+                <p className="text-gray-200 text-sm text-center mt-6">
                     Already have an account? <span className="text-gray-950 cursor-pointer hover:underline">Log in</span>
                 </p>
 
