@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import TeamCard from '../components/TeamCard'
 import generic from '../assets/Genbg.png'
 import Celtics from '../assets/celticsLogo.png'
+import Knicks from '../assets/knicks.png'
+import Bulls from '../assets/bulls.png'
+import Lakers from '../assets/lakers.png'
+import Pacers from '../assets/pacers.png'
 
 function TeamSelector() {
     const [selectedTeams, setSelectedTeams] = useState([])
@@ -12,7 +16,7 @@ function TeamSelector() {
     const teams = [
         { id: 1, name: 'Boston Celtics', logo: Celtics },
         { id: 2, name: 'Brooklyn Nets', logo: '...' },
-        { id: 3, name: 'New York Knicks', logo: '...' },
+        { id: 3, name: 'New York Knicks', logo: Knicks },
         { id: 4, name: 'Philadelphia 76ers', logo: '...' },
         { id: 5, name: 'Toronto Raptors', logo: '...' },
         { id: 6, name: 'Golden State Warriors', logo: '...' },
@@ -20,10 +24,10 @@ function TeamSelector() {
         { id: 8, name: 'LA Lakers', logo: '...' },
         { id: 9, name: 'Phoenix Suns', logo: '...' },
         { id: 10, name: 'Sacramento Kings', logo: '...' },
-        { id: 11, name: 'Chicago Bulls', logo: '...' },
+        { id: 11, name: 'Chicago Bulls', logo: Bulls },
         { id: 12, name: 'Cleveland Cavaliers', logo: '...' },
         { id: 13, name: 'Detroit Pisons', logo: '...' },
-        { id: 14, name: 'Indiana Pacers', logo: '...' },
+        { id: 14, name: 'Indiana Pacers', logo: Pacers },
         { id: 15, name: 'Milwaukee Bucks', logo: '...' },
         { id: 16, name: 'Atlanta Hawks', logo: '...' },
         { id: 17, name: 'Charlotte Hornets', logo: '...' },
@@ -74,7 +78,9 @@ function TeamSelector() {
 
     return (
         <div className='min-h-screen p-8' style={{ backgroundImage: `url(${generic})`}}>
+            {/* Header */}
             <h1 className='text-black text-3xl font-bold mb-8 text-center'>Pick your favorite teams</h1>
+            {/* Team card rows & Columns */}
             <div className='grid grid-cols-6 gap-6'>
                 {teams.map(team => (
                     <TeamCard
@@ -86,6 +92,7 @@ function TeamSelector() {
                     />
                 ))}
             </div>
+            {/* Continue button */}
             <button
                 onClick={handleContinue}
                 className="bg-[#008EFF] hover:bg-blue-400 text-white font-semibold py-2 px-12 rounded-lg transition-colors mt-8 w-full"

@@ -37,7 +37,9 @@ function SignUp() {
 
     return (
         <div className="min-h-screen flex items-center justify-center" style={{ backgroundImage: `url(${generic})`}}>
+            {/* Sign in card */}
             <div className="bg-[#008EFF] p-8 rounded-2xl w-full max-w-md">
+                {/* Top half of the card */}
                 <div className='flex items-center gap-3 mb-2'>
                     <img src={altlogo} alt='alternate hoopy logo' className='w-20 h-20 mb-2 object-contain' />
                     <h1 className="text-white text-3xl font-bold">Sign up for Hoopy today!</h1>
@@ -48,6 +50,7 @@ function SignUp() {
                     <p className="text-red-400 text-sm mb-4 bg-red-950 p-3 rounded-lg">{error}</p>
                 )}
 
+                {/* Text fields */}
                 <div className="flex flex-col gap-4">
                     <input
                         type="text"
@@ -72,7 +75,8 @@ function SignUp() {
                         onChange={(e) => setPassword(e.target.value)}
                         className="bg-gray-50 text-black placeholder-gray-500 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-300"
                     />
-
+                    
+                    {/* Bottom of the card */}
                     <button
                         onClick={handleSubmit}
                         className="bg-gray-950 hover:bg-sky-950 text-white font-semibold py-3 rounded-lg transition-colors mt-2"

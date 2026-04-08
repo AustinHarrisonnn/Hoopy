@@ -7,8 +7,8 @@ function TeamCard({ teamName, logo, isSelected, onSelect }) {
             onClick={onSelect}
             className={`flex flex-col items-center justify-center p-4 rounded-xl cursor-pointer border-2 transition-all
                 ${isSelected
-                    ? 'border-[#005395] bg-[#008EFF]/60'
-                    : 'border-[#3C3C3C] bg-[#000000]/90 hover:border-gray-500'
+                    ? 'border-[#005395] bg-[#008EFF]/60' //When the team is selected
+                    : 'border-[#3C3C3C] bg-[#000000]/90 hover:border-gray-500' // When the team is not selected
                 }`}
         >
             <img src={logo} alt={teamName} className='w-16 h-16 object-contain mb-2' />
