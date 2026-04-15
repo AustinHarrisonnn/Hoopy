@@ -1,7 +1,20 @@
 import generic from '../assets/Genbg.png'
 import logo from '../assets/realHoopy.png'
+import { auth } from '../lib/firebase'
+import { signOut } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
+    const navigate = useNavigate()
+
+    const handleSignOut = async () => {
+        try {
+            await signOut(auth)
+            navigate('/')
+        } catch (err) {
+            console.error('Error signing out:', err)
+        }
+    }
 
 
     return (
@@ -14,7 +27,7 @@ function Dashboard() {
                         <img src={logo} alt="Hoopy logo" className='w-100 pb-10 pl-10' /> 
                     </div>
                     <div className='grid grid-flow-col justify-items-end content-center'>
-                        <button className="bg-blue-900 hover:bg-blue-300 text-white font-semibold py-2 px-6 rounded-lg transition-colors mr-30 max-h-30">Sign Out</button>
+                        <button onClick={handleSignOut} className="bg-blue-900 hover:bg-blue-300 text-white font-semibold py-2 px-6 rounded-lg transition-colors mr-30 max-h-30">Sign Out</button>
                     </div>
                 </div>
                 {/* Middle 2 rows */}
