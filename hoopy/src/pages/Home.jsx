@@ -1,10 +1,25 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import bgImage from '../assets/bg2.png'
 import logo from '../assets/realHoopy.png'
-import ball from '../assets/ball.png'
+import { auth } from '../lib/firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 function Home() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const navigate = useNavigate()
+
+    const handleSignIn = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, email, password)
+            navigate('/dashboard')
+        } catch (err) {
+            setError('Your email or password was incorrect')
+        }
+    }
+
     return (
         <div
             className="min-h-screen bg-cover bg-center bg-no-repeat"
@@ -18,24 +33,32 @@ function Home() {
                     {/* Sign in box */}
                     <div className='bg-[#008EFF] flex flex-col items-center mr-10 p-10 rounded-xl'>
                         <h1 className='text-white text-xl mb-10'>Already have account? Sign in!</h1>
+
+                        {error && (
+                            <p className='text-red-200 text-sm mb-4 bg-red-600 p-3 rounded-lg w-full text-center opacity-75'>{error}</p>
+                        )}
                         {/* Username box */}
                         <div className='mb-3 w-full'>
                             <input
-                                type='text'
-                                placeholder='Username'
+                                type='email'
+                                placeholder='Email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className='bg-gray-300 text-black placeholder-gray-500 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-950 w-full'
                             />
                         </div>
                         {/* Password box */}
                         <div className='w-full'>
                             <input
-                                type='text'
+                                type='password'
                                 placeholder='Password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 className='bg-gray-300 text-black placeholder-gray-500 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-950 w-full'
                             />
                         </div>
                         {/* Button and sign up link */}
-                        <button className="bg-blue-900 hover:bg-blue-300 text-white font-semibold py-2 px-6 rounded-lg transition-colors mt-4 w-full">
+                        <button onClick={handleSignIn} className="bg-blue-900 hover:bg-blue-300 text-white font-semibold py-2 px-6 rounded-lg transition-colors mt-4 w-full">
                             Sign In
                         </button>
                         <p className='text-white mt-3'>Or, <Link to='/signup' className='text-blue-900 hover:underline'>sign up</Link></p>
